@@ -1,0 +1,30 @@
+body {
+	margin-top: 15em;
+	margin-bottom: 50px;
+	background: none;
+}
+
+.full {
+  background: url(../img/gr.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.dimmed {
+  position: relative;
+}
+
+.dimmed:after {
+  content: " ";
+  z-index: 10;
+  display: block;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  opacity: 0.3;
+}

@@ -5,33 +5,60 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>GRHiker</title>
 
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+
+
     <!-- ArcGIS API call for JS -->
 	<link rel="stylesheet" href="https://js.arcgis.com/3.16/esri/css/esri.css">
 	<script src="https://js.arcgis.com/3.16/"></script>
 
+	<!-- Global JS -->
+	<script src="https://code.jquery.com/jquery-2.2.3.min.js"integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="
+	crossorigin="anonymous"></script>
+	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
 
 
 	<style>
-	  html, body, #mapDiv {
-	    padding: 0;
-	    margin: 0;
-	    height: 100%;
-	  }
-	</style>
+    html, body, #map {
+      padding:0;
+      margin:0;
+      height:100%;
+    }
+    #BasemapToggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 50;
+    }
+  	</style>
 
 
   </head>
-  <body class="claro">
-  	<div id="mapDiv"></div>
+  <body>
+  	<div id="map" class="map">
+  	<div id="BasemapToggle"></div>
+  	</div>
 
 	<script>
 	var map;
-	require(["esri/map", "dojo/domReady!"], function(Map) {
-	  map = new Map("mapDiv", {
-	    center: [-122.2, 47.36],
-	    zoom: 15,
-	    basemap: "streets"
+	require([
+      "esri/map", 
+      "esri/dijit/BasemapToggle",
+      "dojo/domReady!"
+    ], function(
+      Map, BasemapToggle
+    )  {
+
+	  map = new Map("map", {
+	    center: [-122.18, 47.313],
+	    zoom: 17,
+	    basemap: "topo"
 	  });
+
+	  
 	});
 	</script>
 
